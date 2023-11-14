@@ -115,7 +115,6 @@ function scanWord(letters) {
   const tdElements = currentRow.querySelectorAll('td'); // Select all td elements within the current row
 
   if (guess === correctWord) { //Correct word guessed
-    console.log("Game over");
     gameOver = true;
     for (const tdElement of tdElements) {
       tdElement.style.backgroundColor = 'green';
@@ -149,6 +148,5 @@ function isCharacterALetter(char) { //Verifies input is a letter
 
 function randomWord() {
   let word = generateWord();
-  console.log(word)
   return word;
 }
