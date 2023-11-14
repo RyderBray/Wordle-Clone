@@ -8,9 +8,8 @@ html {
 }
 
 .icons {
-    width: 470px;
     margin: 0 auto;
-    padding-top: 50px;
+    padding-top: 2.5em;
 }
 
 .icons button{
@@ -22,7 +21,7 @@ html {
 }
 
 .icons i {
-    font-size: 30px;
+    font-size: 2em;
     color: white;
     cursor: pointer;
     user-select: none;
@@ -36,12 +35,12 @@ html {
 
 .game-area td {
     border-radius: 10px;
-    font-size: 40px;
+    font-size: 2.5em;
     font-weight: bold;
     color: white;
     border: 2px solid black;
-    width: 85px;
-    height: 85px;
+    width: 2.25em;
+    height: 2.25em;
     text-align: center;
 }
 
@@ -49,7 +48,7 @@ html {
     color: white;
     display: flex;
     justify-content: center;
-    padding-top: 25px;
+    padding-top: 2em;
 }
 
 .keyboard tr {
@@ -59,19 +58,23 @@ html {
 
 .keyboard td {
     text-align: center;
-    margin: 3px;
+    margin: 0.2em;
 }
 
 .keyboard button {
-    width: 52px;
-    height: 52px;
+    width: 2em;
+    height: 2em;
     cursor: pointer;
     background-color: rgb(77, 77, 82);
     border: solid black 1px;
     border-radius: 5px;
     color: white;
     font-weight: bold;
-    font-size: 28px;
+    font-size: 1.75em;
+}
+
+.keyboard .large-button {
+    width: 3.15em
 }
 
 .keyboard button:hover {

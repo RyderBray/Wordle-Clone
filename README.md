@@ -1,3 +1,5 @@
 # Wordle-Clone
  
-Initial release: Working Wordle clone with almost all of the main features of the original game. Still need to add code to check if user input is a valid word.
+Clone of the popular game Wordle using HTML, CSS, and JavaScript
+
+Latest update: Added enter and backspace key to lower keyboard

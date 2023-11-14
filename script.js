@@ -36,7 +36,7 @@ function playerAttempt() {
 
   for (let button of keyboardInput) { //Keyboard click logic
     button.addEventListener('click', function(event) {
-      let clickedLetter = event.target.textContent;
+      let clickedButton = event.target.textContent;
 
       if (gameOver === true) {
         return;
@@ -45,12 +45,29 @@ function playerAttempt() {
       const currentRow = document.querySelector(`[row="${currentLine}"]`); //Current row
       let currentBox = currentRow.querySelector(`[box="${box_num}"]`); //Current box
 
-      if (isCharacterALetter(clickedLetter) && userInput.length < 5) {
-        userInput.push(clickedLetter.toUpperCase());
-        currentBox.textContent = clickedLetter.toUpperCase();
+      if (isCharacterALetter(clickedButton) && userInput.length < 5) {
+        userInput.push(clickedButton.toUpperCase());
+        currentBox.textContent = clickedButton.toUpperCase();
         box_num += 1;
         event.target.blur();
       }
+
+      if (clickedButton === '⌫' && userInput.length !== 0) {
+        box_num = box_num - 1;
+        currentBox = currentRow.querySelector(`[box="${box_num}"]`);
+        userInput.pop();
+        currentBox.textContent = '';
+      }
+
+      if (clickedButton === 'Enter' && userInput.length === 5) {
+        scanWord(userInput);
+        if (currentLine !== 6) {
+          currentLine += 1;
+          userInput = [];
+        }
+        box_num = 0;
+      }
+
     })
   }
 
