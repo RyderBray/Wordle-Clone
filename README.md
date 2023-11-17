@@ -2,4 +2,4 @@
  
 Clone of the popular game Wordle using HTML, CSS, and JavaScript
 
-Latest update: Added enter and backspace key to lower keyboard
+Latest update: Improved UI, pop up message at the end of the game

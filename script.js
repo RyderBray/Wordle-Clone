@@ -12,6 +12,8 @@ resetButton.addEventListener('click', function() { //Resets game board, chooses 
   if (gameOver === true) {
     gameOver = false;
   }
+  document.querySelector(".popup").style.display = "none";
+
   currentLine = 1;
   box_num = 0;
   userInput = [];
@@ -65,6 +67,10 @@ function playerAttempt() {
           currentLine += 1;
           userInput = [];
         }
+        else {
+          document.querySelector(".popup").style.display = "block";
+          document.getElementById("popup-message").textContent = "The correct word was: " + correctWord;
+        }
         box_num = 0;
       }
 
@@ -99,11 +105,19 @@ function playerAttempt() {
           currentLine += 1;
           userInput = [];
         }
+        else {
+          document.querySelector(".popup").style.display = "block";
+          document.getElementById("popup-message").textContent = "The correct word was: " + correctWord;
+        }
         box_num = 0;
       }
     }
   });
-}  
+} 
+
+document.querySelector("#close").addEventListener("click", function(){
+  document.querySelector(".popup").style.display = "none";
+});
 
 function scanWord(letters) {
   let guess = letters.join('');
@@ -136,6 +150,8 @@ function scanWord(letters) {
     for (const tdElement of tdElements) {
       tdElement.style.backgroundColor = 'green';
     }
+    document.querySelector(".popup").style.display = "block";
+    document.getElementById("popup-message").textContent = "Nice job! The word was: " + correctWord;
   }
   else {
     for (const char of guess) {
